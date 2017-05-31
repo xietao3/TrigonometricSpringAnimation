@@ -31,14 +31,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _animation = [FDSpringAnimation animationType:FDAnimationTypeSize];
-    _animation.fromValue = [NSValue valueWithCGSize:CGSizeMake(0, 0)];
-    _animation.toValue = [NSValue valueWithCGSize:CGSizeMake(100,100)];
+    _animation = [FDSpringAnimation animationType:FDAnimationTypeScale];
+    _animation.fromValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
+    _animation.toValue = [NSValue valueWithCGSize:CGSizeMake(5.0,5.0)];
     _animation.bounce = YES;
     _animation.speed = 0.005;
+    _animation.needFabs = YES;
     _animation.completionBlock = ^(FDBaseAnimation *anim,BOOL finished) {
         NSLog(@"DEMOVIEW");
     };
+    _demoView.layer.cornerRadius = _demoView.frame.size.height/2;
+    _demoView.layer.masksToBounds = YES;
+
 }
 
 
@@ -50,15 +54,13 @@
 }
 
 - (IBAction)startAction:(id)sender {
-    _demoView.layer.cornerRadius = _demoView.frame.size.height/2;
-    _demoView.layer.masksToBounds = YES;
     [_demoView fd_addAnimation:_animation];
     
     FDSpringAnimation *animation = [FDSpringAnimation animationType:FDAnimationTypePosition];
     animation.fromValue = [NSValue valueWithCGSize:CGSizeMake(0, 0)];
     animation.toValue = [NSValue valueWithCGSize:CGSizeMake(100,100)];
     animation.bounce = YES;
-
+    animation.needFabs = YES;
     animation.speed = 0.02;
     animation.completionBlock = ^(FDBaseAnimation *anim,BOOL finished) {
         NSLog(@"DEMO VIEW2");

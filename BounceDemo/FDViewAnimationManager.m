@@ -58,7 +58,6 @@
 }
 
 - (void)stopDisplayLink {
-   
     self.displayLink.paused = YES;
 }
 
@@ -95,8 +94,8 @@
         NSValue *toValue = animation.toValue;
         CGPoint endPoint = toValue.CGPointValue;
         
-        tempFrame.origin.x = endPoint.x+(endPoint.x - startPoint.x)*timeLineY;
-        tempFrame.origin.y = endPoint.y+(endPoint.y - startPoint.y)*timeLineY;
+        tempFrame.origin.x = startPoint.x+(endPoint.x - startPoint.x)*timeLineY;
+        tempFrame.origin.y = startPoint.y+(endPoint.y - startPoint.y)*timeLineY;
         animationView.frame = tempFrame;
 
     }else if (animation.animationType == FDAnimationTypeSize) {
@@ -106,12 +105,25 @@
         CGSize startSize = fromValue.CGSizeValue;
         NSValue *toValue = animation.toValue;
         CGSize endSize = toValue.CGSizeValue;
-        tempFrame.size.width = endSize.width+(endSize.width - startSize.width)*timeLineY;
-        tempFrame.size.height = endSize.height+(endSize.height - startSize.height)*timeLineY;
+        tempFrame.size.width = startSize.width+(endSize.width - startSize.width)*timeLineY;
+        tempFrame.size.height = startSize.height+(endSize.height - startSize.height)*timeLineY;
         animationView.frame = tempFrame;
         animationView.center = tempCenter;
     }else if (animation.animationType == FDAnimationTypeScale) {
-        
+        CGPoint tempCenter = animationView.center;
+
+        NSValue *fromValue = animation.fromValue;
+        CGSize startScaleSize = fromValue.CGSizeValue;
+
+        NSValue *toValue = animation.toValue;
+        CGSize endScaleSize = toValue.CGSizeValue;
+
+        CGFloat scaleWidth = startScaleSize.width+(endScaleSize.width - startScaleSize.width)*timeLineY;
+        CGFloat scaleHeight = startScaleSize.height+(endScaleSize.height - startScaleSize.height)*timeLineY;
+//        animationView.transform = CGAffineTransformIdentity;
+
+        animationView.transform = CGAffineTransformMakeScale(scaleWidth,scaleHeight);
+        animationView.center = tempCenter;
     }
 
 }
@@ -135,9 +147,10 @@
 }
 
 - (void)checkStopSpringAnimation:(FDBaseAnimation *)animation timeLineY:(float)y {
-    if (fabs(y) < 0.001 && fabs(animation.lastY)<0.001) {
+    if (fabs(y-1) < 0.001 && fabs(animation.lastY-1)<0.001) {
         animation.timeLineX = 0;
         animation.finished = YES;
+     
         if (animation.completionBlock) {
             animation.completionBlock(animation,animation.finished);
         }
@@ -160,8 +173,13 @@
 
 - (CGFloat)getSpringAnimation:(FDSpringAnimation *)animation springOffset:(CGFloat)x {
     // 偏移后的值
-    CGFloat result = -pow(2, -animation.damping * x) * cos(animation.frequency*x);
-    return animation.needFabs?fabs(result):result;
+    CGFloat result;
+    if (!animation.needFabs) {
+        result = -pow(2, -animation.damping * x) * cos(animation.frequency*x)+1;
+    }else{
+        result = -(fabs(pow(2, -animation.damping * x) * cos(animation.frequency*x)))+1;
+    }
+    return result;
     
 }
 

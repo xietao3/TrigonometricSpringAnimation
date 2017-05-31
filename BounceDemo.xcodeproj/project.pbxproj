@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		932B3E811ED87E390075C3F2 /* FDBaseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 932B3E801ED87E390075C3F2 /* FDBaseAnimation.m */; };
 		932B3E841ED892670075C3F2 /* FDSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 932B3E831ED892670075C3F2 /* FDSpringAnimation.m */; };
-		932CDC961ED19EBC004037CA /* FDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 932CDC951ED19EBC004037CA /* FDAnimation.m */; };
 		9374A8431EC43FD200FB5F9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374A8421EC43FD200FB5F9D /* main.m */; };
 		9374A8461EC43FD200FB5F9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374A8451EC43FD200FB5F9D /* AppDelegate.m */; };
 		9374A8491EC43FD200FB5F9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374A8481EC43FD200FB5F9D /* ViewController.m */; };
@@ -44,8 +43,6 @@
 		932B3E801ED87E390075C3F2 /* FDBaseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDBaseAnimation.m; sourceTree = "<group>"; };
 		932B3E821ED892670075C3F2 /* FDSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDSpringAnimation.h; sourceTree = "<group>"; };
 		932B3E831ED892670075C3F2 /* FDSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDSpringAnimation.m; sourceTree = "<group>"; };
-		932CDC941ED19EBC004037CA /* FDAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDAnimation.h; sourceTree = "<group>"; };
-		932CDC951ED19EBC004037CA /* FDAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDAnimation.m; sourceTree = "<group>"; };
 		9374A83E1EC43FD200FB5F9D /* BounceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BounceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9374A8421EC43FD200FB5F9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9374A8441EC43FD200FB5F9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,8 +119,6 @@
 				9374A8481EC43FD200FB5F9D /* ViewController.m */,
 				937B54151ECC663800139A3E /* FDViewAnimationManager.h */,
 				937B54161ECC663800139A3E /* FDViewAnimationManager.m */,
-				932CDC941ED19EBC004037CA /* FDAnimation.h */,
-				932CDC951ED19EBC004037CA /* FDAnimation.m */,
 				932B3E7F1ED87E390075C3F2 /* FDBaseAnimation.h */,
 				932B3E801ED87E390075C3F2 /* FDBaseAnimation.m */,
 				932B3E821ED892670075C3F2 /* FDSpringAnimation.h */,
@@ -303,7 +298,6 @@
 				932B3E841ED892670075C3F2 /* FDSpringAnimation.m in Sources */,
 				93A073361ED2F8F700C9EFBF /* UIView+FDAnimation.m in Sources */,
 				932B3E811ED87E390075C3F2 /* FDBaseAnimation.m in Sources */,
-				932CDC961ED19EBC004037CA /* FDAnimation.m in Sources */,
 				937B54171ECC663800139A3E /* FDViewAnimationManager.m in Sources */,
 				9374A8461EC43FD200FB5F9D /* AppDelegate.m in Sources */,
 				9374A8431EC43FD200FB5F9D /* main.m in Sources */,
