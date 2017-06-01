@@ -80,18 +80,18 @@
     
     float timeLineY = 0;
     if ([animation isMemberOfClass:[FDSpringAnimation class]] && ((FDSpringAnimation *)animation).bounce) {
-        animation.progress+=animation.speed;
         timeLineY = [self getSpringAnimation:(FDSpringAnimation *)animation springOffset:animation.progress];
+        animation.progress+=animation.speed;
         [self checkStopSpringAnimation:animation  timeLineY:timeLineY];
 
     }else{
-        animation.progress+=animation.speed*2;
 
         if (animation.easeInOut) {
             timeLineY = [self getEaseInOutAnimation:animation springOffset:animation.progress];
         }else{
             timeLineY = [self getLinearAnimation:animation springOffset:animation.progress];
         }
+        animation.progress+=animation.speed*2;
         [self checkStopAnimation:animation  timeLineY:timeLineY];
     }
     
@@ -128,7 +128,6 @@
 
         CGFloat scaleWidth = startScaleSize.width+(endScaleSize.width - startScaleSize.width)*timeLineY;
         CGFloat scaleHeight = startScaleSize.height+(endScaleSize.height - startScaleSize.height)*timeLineY;
-//        animationView.transform = CGAffineTransformIdentity;
 
         animationView.transform = CGAffineTransformMakeScale(scaleWidth,scaleHeight);
         animationView.center = tempCenter;
