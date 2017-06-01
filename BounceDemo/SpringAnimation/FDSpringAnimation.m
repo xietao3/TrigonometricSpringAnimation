@@ -46,24 +46,6 @@ static const NSUInteger maxFrequency = 100;
     _frequency  = MAX(MIN(_frequency, maxFrequency), minFrequency);
 }
 
-- (instancetype)copyWithZone:(NSZone *)zone {
-    FDSpringAnimation *object = [[FDSpringAnimation allocWithZone:zone] init];
-    
-    object.animationType    = self.animationType;
-    object.fromValue        = self.fromValue;
-    object.toValue          = self.toValue;
-    object.speed            = self.speed;
-    object.damping          = self.damping;
-    object.frequency        = self.frequency;
-    object.needFabs         = self.needFabs;
-    object.lastY            = self.lastY;
-    object.timeLineX        = self.timeLineX;
-    object.completionBlock  = self.completionBlock;
-    object.finished         = self.finished;
-    object.animationTarget  = self.animationTarget;
-    object.bounce           = self.bounce;
-    return object;
-}
 
 
 

@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FDBaseAnimation.h"
 
 @import UIKit;
-
+@class FDBaseAnimation;
 
 @interface FDViewAnimationManager : NSObject
 

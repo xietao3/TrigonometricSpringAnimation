@@ -12,8 +12,8 @@
 
 #pragma mark - optional
 
+// 弹性动画
 @property (nonatomic, assign) BOOL bounce;
-
 // 阻尼 0-30
 @property (nonatomic, assign) CGFloat damping;
 // 频率 1-100

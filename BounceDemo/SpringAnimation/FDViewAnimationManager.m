@@ -7,7 +7,9 @@
 //
 
 #import "FDViewAnimationManager.h"
+#import "FDBaseAnimation.h"
 #import "FDSpringAnimation.h"
+
 
 @interface FDViewAnimationManager ()
 
@@ -43,9 +45,10 @@
     return self;
 }
 
-- (void)springView:(UIView *)view animation:(id)animation {
+- (void)springView:(UIView *)view animation:(FDBaseAnimation *)animation {
     if (animation) {
-        [self.animations addObject:[animation copy]];
+        [self.animations addObject:animation];
+        animation.finished = NO;
         self.animationCount = self.animations.count;
         [self startDisplayLink];
     }
@@ -77,13 +80,18 @@
     
     float timeLineY = 0;
     if ([animation isMemberOfClass:[FDSpringAnimation class]] && ((FDSpringAnimation *)animation).bounce) {
-        animation.timeLineX+=animation.speed;
-        timeLineY = [self getSpringAnimation:(FDSpringAnimation *)animation springOffset:animation.timeLineX];
+        animation.progress+=animation.speed;
+        timeLineY = [self getSpringAnimation:(FDSpringAnimation *)animation springOffset:animation.progress];
         [self checkStopSpringAnimation:animation  timeLineY:timeLineY];
 
     }else{
-        animation.timeLineX+=animation.speed*2;
-        timeLineY = [self getAnimation:animation springOffset:animation.timeLineX];
+        animation.progress+=animation.speed*2;
+
+        if (animation.easeInOut) {
+            timeLineY = [self getEaseInOutAnimation:animation springOffset:animation.progress];
+        }else{
+            timeLineY = [self getLinearAnimation:animation springOffset:animation.progress];
+        }
         [self checkStopAnimation:animation  timeLineY:timeLineY];
     }
     
@@ -129,35 +137,38 @@
 }
 
 - (void)checkStopAnimation:(FDBaseAnimation *)animation timeLineY:(float)y {
-    if (fabs(y)>fabs(animation.lastY) && animation.lastY != 0) {
-        animation.timeLineX = 0;
+    if (animation.progress >= 1.0) {
+        animation.progress = 0;
         animation.finished = YES;
-        if (animation.completionBlock) {
-            animation.completionBlock(animation,animation.finished);
-        }
+        
         [self.animations removeObject:animation];
         self.animationCount--;
         if (self.animations.count == 0) {
             [self stopDisplayLink];
         }
+        
+        if (animation.completionBlock) {
+            animation.completionBlock(animation,animation.finished);
+        }
 
     }
-    animation.lastY = y;
 
 }
 
 - (void)checkStopSpringAnimation:(FDBaseAnimation *)animation timeLineY:(float)y {
     if (fabs(y-1) < 0.001 && fabs(animation.lastY-1)<0.001) {
-        animation.timeLineX = 0;
+        animation.progress = 0;
         animation.finished = YES;
      
-        if (animation.completionBlock) {
-            animation.completionBlock(animation,animation.finished);
-        }
+       
         [self.animations removeObject:animation];
         self.animationCount--;
         if (self.animations.count == 0) {
             [self stopDisplayLink];
+        }
+        
+        if (animation.completionBlock) {
+            animation.completionBlock(animation,animation.finished);
         }
         
     }
@@ -166,9 +177,12 @@
 }
 
 
+- (CGFloat)getLinearAnimation:(FDBaseAnimation *)animation springOffset:(CGFloat)x {
+    return MIN(x, 1.000);
+}
 
-- (CGFloat)getAnimation:(FDBaseAnimation *)animation springOffset:(CGFloat)x {
-    return MIN(-cos(M_PI*animation.timeLineX)/2.0-0.5, 0.000);
+- (CGFloat)getEaseInOutAnimation:(FDBaseAnimation *)animation springOffset:(CGFloat)x {
+    return MIN(-cos(M_PI*animation.progress)/2.0+0.5, 1.000);
 }
 
 - (CGFloat)getSpringAnimation:(FDSpringAnimation *)animation springOffset:(CGFloat)x {

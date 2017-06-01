@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		932B3E811ED87E390075C3F2 /* FDBaseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 932B3E801ED87E390075C3F2 /* FDBaseAnimation.m */; };
-		932B3E841ED892670075C3F2 /* FDSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 932B3E831ED892670075C3F2 /* FDSpringAnimation.m */; };
 		9374A8431EC43FD200FB5F9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374A8421EC43FD200FB5F9D /* main.m */; };
 		9374A8461EC43FD200FB5F9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374A8451EC43FD200FB5F9D /* AppDelegate.m */; };
 		9374A8491EC43FD200FB5F9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374A8481EC43FD200FB5F9D /* ViewController.m */; };
@@ -17,8 +15,12 @@
 		9374A8511EC43FD200FB5F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9374A84F1EC43FD200FB5F9D /* LaunchScreen.storyboard */; };
 		9374A85C1EC43FD200FB5F9D /* BounceDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374A85B1EC43FD200FB5F9D /* BounceDemoTests.m */; };
 		9374A8671EC43FD200FB5F9D /* BounceDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374A8661EC43FD200FB5F9D /* BounceDemoUITests.m */; };
-		937B54171ECC663800139A3E /* FDViewAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 937B54161ECC663800139A3E /* FDViewAnimationManager.m */; };
-		93A073361ED2F8F700C9EFBF /* UIView+FDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A073351ED2F8F700C9EFBF /* UIView+FDAnimation.m */; };
+		93CA96BA1EDFABA100C0138D /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA96B81EDFABA100C0138D /* AnimationViewController.m */; };
+		93CA96BB1EDFABA100C0138D /* AnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93CA96B91EDFABA100C0138D /* AnimationViewController.xib */; };
+		93CA96C51EDFABDE00C0138D /* FDBaseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA96BE1EDFABDE00C0138D /* FDBaseAnimation.m */; };
+		93CA96C61EDFABDE00C0138D /* FDSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA96C01EDFABDE00C0138D /* FDSpringAnimation.m */; };
+		93CA96C71EDFABDE00C0138D /* FDViewAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA96C21EDFABDE00C0138D /* FDViewAnimationManager.m */; };
+		93CA96C81EDFABDE00C0138D /* UIView+FDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA96C41EDFABDE00C0138D /* UIView+FDAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		932B3E7F1ED87E390075C3F2 /* FDBaseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDBaseAnimation.h; sourceTree = "<group>"; };
-		932B3E801ED87E390075C3F2 /* FDBaseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDBaseAnimation.m; sourceTree = "<group>"; };
-		932B3E821ED892670075C3F2 /* FDSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDSpringAnimation.h; sourceTree = "<group>"; };
-		932B3E831ED892670075C3F2 /* FDSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDSpringAnimation.m; sourceTree = "<group>"; };
 		9374A83E1EC43FD200FB5F9D /* BounceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BounceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9374A8421EC43FD200FB5F9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9374A8441EC43FD200FB5F9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,10 +57,18 @@
 		9374A8621EC43FD200FB5F9D /* BounceDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BounceDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9374A8661EC43FD200FB5F9D /* BounceDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BounceDemoUITests.m; sourceTree = "<group>"; };
 		9374A8681EC43FD200FB5F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		937B54151ECC663800139A3E /* FDViewAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDViewAnimationManager.h; sourceTree = "<group>"; };
-		937B54161ECC663800139A3E /* FDViewAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDViewAnimationManager.m; sourceTree = "<group>"; };
-		93A073341ED2F8F700C9EFBF /* UIView+FDAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FDAnimation.h"; sourceTree = "<group>"; };
-		93A073351ED2F8F700C9EFBF /* UIView+FDAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FDAnimation.m"; sourceTree = "<group>"; };
+		93CA96B71EDFABA100C0138D /* AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
+		93CA96B81EDFABA100C0138D /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
+		93CA96B91EDFABA100C0138D /* AnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimationViewController.xib; sourceTree = "<group>"; };
+		93CA96BD1EDFABDE00C0138D /* FDBaseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDBaseAnimation.h; sourceTree = "<group>"; };
+		93CA96BE1EDFABDE00C0138D /* FDBaseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDBaseAnimation.m; sourceTree = "<group>"; };
+		93CA96BF1EDFABDE00C0138D /* FDSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDSpringAnimation.h; sourceTree = "<group>"; };
+		93CA96C01EDFABDE00C0138D /* FDSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDSpringAnimation.m; sourceTree = "<group>"; };
+		93CA96C11EDFABDE00C0138D /* FDViewAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDViewAnimationManager.h; sourceTree = "<group>"; };
+		93CA96C21EDFABDE00C0138D /* FDViewAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDViewAnimationManager.m; sourceTree = "<group>"; };
+		93CA96C31EDFABDE00C0138D /* UIView+FDAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FDAnimation.h"; sourceTree = "<group>"; };
+		93CA96C41EDFABDE00C0138D /* UIView+FDAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FDAnimation.m"; sourceTree = "<group>"; };
+		93CA96C91EDFAC0700C0138D /* FDAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAnimation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,18 +119,14 @@
 		9374A8401EC43FD200FB5F9D /* BounceDemo */ = {
 			isa = PBXGroup;
 			children = (
+				93CA96BC1EDFABDE00C0138D /* SpringAnimation */,
 				9374A8441EC43FD200FB5F9D /* AppDelegate.h */,
 				9374A8451EC43FD200FB5F9D /* AppDelegate.m */,
 				9374A8471EC43FD200FB5F9D /* ViewController.h */,
 				9374A8481EC43FD200FB5F9D /* ViewController.m */,
-				937B54151ECC663800139A3E /* FDViewAnimationManager.h */,
-				937B54161ECC663800139A3E /* FDViewAnimationManager.m */,
-				932B3E7F1ED87E390075C3F2 /* FDBaseAnimation.h */,
-				932B3E801ED87E390075C3F2 /* FDBaseAnimation.m */,
-				932B3E821ED892670075C3F2 /* FDSpringAnimation.h */,
-				932B3E831ED892670075C3F2 /* FDSpringAnimation.m */,
-				93A073341ED2F8F700C9EFBF /* UIView+FDAnimation.h */,
-				93A073351ED2F8F700C9EFBF /* UIView+FDAnimation.m */,
+				93CA96B71EDFABA100C0138D /* AnimationViewController.h */,
+				93CA96B81EDFABA100C0138D /* AnimationViewController.m */,
+				93CA96B91EDFABA100C0138D /* AnimationViewController.xib */,
 				9374A84A1EC43FD200FB5F9D /* Main.storyboard */,
 				9374A84D1EC43FD200FB5F9D /* Assets.xcassets */,
 				9374A84F1EC43FD200FB5F9D /* LaunchScreen.storyboard */,
@@ -158,6 +160,22 @@
 				9374A8681EC43FD200FB5F9D /* Info.plist */,
 			);
 			path = BounceDemoUITests;
+			sourceTree = "<group>";
+		};
+		93CA96BC1EDFABDE00C0138D /* SpringAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				93CA96C91EDFAC0700C0138D /* FDAnimation.h */,
+				93CA96C11EDFABDE00C0138D /* FDViewAnimationManager.h */,
+				93CA96C21EDFABDE00C0138D /* FDViewAnimationManager.m */,
+				93CA96BD1EDFABDE00C0138D /* FDBaseAnimation.h */,
+				93CA96BE1EDFABDE00C0138D /* FDBaseAnimation.m */,
+				93CA96BF1EDFABDE00C0138D /* FDSpringAnimation.h */,
+				93CA96C01EDFABDE00C0138D /* FDSpringAnimation.m */,
+				93CA96C31EDFABDE00C0138D /* UIView+FDAnimation.h */,
+				93CA96C41EDFABDE00C0138D /* UIView+FDAnimation.m */,
+			);
+			path = SpringAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +288,7 @@
 				9374A8511EC43FD200FB5F9D /* LaunchScreen.storyboard in Resources */,
 				9374A84E1EC43FD200FB5F9D /* Assets.xcassets in Resources */,
 				9374A84C1EC43FD200FB5F9D /* Main.storyboard in Resources */,
+				93CA96BB1EDFABA100C0138D /* AnimationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,12 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9374A8491EC43FD200FB5F9D /* ViewController.m in Sources */,
-				932B3E841ED892670075C3F2 /* FDSpringAnimation.m in Sources */,
-				93A073361ED2F8F700C9EFBF /* UIView+FDAnimation.m in Sources */,
-				932B3E811ED87E390075C3F2 /* FDBaseAnimation.m in Sources */,
-				937B54171ECC663800139A3E /* FDViewAnimationManager.m in Sources */,
+				93CA96C51EDFABDE00C0138D /* FDBaseAnimation.m in Sources */,
+				93CA96C71EDFABDE00C0138D /* FDViewAnimationManager.m in Sources */,
+				93CA96BA1EDFABA100C0138D /* AnimationViewController.m in Sources */,
 				9374A8461EC43FD200FB5F9D /* AppDelegate.m in Sources */,
+				93CA96C81EDFABDE00C0138D /* UIView+FDAnimation.m in Sources */,
 				9374A8431EC43FD200FB5F9D /* main.m in Sources */,
+				93CA96C61EDFABDE00C0138D /* FDSpringAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

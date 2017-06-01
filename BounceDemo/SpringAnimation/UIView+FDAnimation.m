@@ -8,6 +8,7 @@
 
 #import "UIView+FDAnimation.h"
 #import "FDViewAnimationManager.h"
+#import "FDBaseAnimation.h"
 
 @implementation UIView (FDAnimation)
 

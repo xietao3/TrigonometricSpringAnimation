@@ -32,14 +32,16 @@ typedef NS_ENUM(NSUInteger, FDAnimationType) {
 @property (nonatomic, assign) CGFloat speed;
 // 取绝对值
 @property (nonatomic, assign) BOOL needFabs;
-
+// 完成回调
 @property (nonatomic, copy) void (^completionBlock)(FDBaseAnimation *animation, BOOL finished) ;
+// 淡入淡出
+@property (nonatomic, assign) BOOL easeInOut;
 
 #pragma mark - ignore
 
 @property (nonatomic, assign) CGFloat lastY;
 
-@property (nonatomic, assign) float timeLineX;
+@property (nonatomic, assign) float progress;
 
 @property (nonatomic, assign) BOOL finished;
 

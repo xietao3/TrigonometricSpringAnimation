@@ -24,7 +24,7 @@ static const CGFloat maxSpeed = 0.1;
 {
     self = [super init];
     if (self) {
-        self.timeLineX = 0;
+        self.progress = 0;
         self.lastY = 0;
         self.finished = NO;
     }
