@@ -1,4 +1,5 @@
-# SpringAnimationDemo2
+# 三角函数实现弹性动画
+
 ![bounce](http://upload-images.jianshu.io/upload_images/1319710-9a26ccb3e9d384cc.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 >弹性动画一直以来都深深地吸引我，随着知识储备增多，渐渐探索出一套弹性动画的实现原理。
